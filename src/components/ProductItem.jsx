@@ -5,6 +5,7 @@ import {
    FavoriteBorder,
 } from '@material-ui/icons';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const Info = styled.div`
    opacity: 0;
@@ -82,7 +83,9 @@ const ProductItem = ({ item }) => {
                <ShoppingCartOutlined />
             </Icon>
             <Icon>
-               <Search />
+               <Link to={`/product/${item._id}`}>
+                  <Search />
+               </Link>
             </Icon>
             <Icon>
                <FavoriteBorder />
@@ -93,3 +96,4 @@ const ProductItem = ({ item }) => {
 };
 
 export default ProductItem;
+// 36.35
