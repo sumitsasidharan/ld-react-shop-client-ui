@@ -96,4 +96,3 @@ const ProductItem = ({ item }) => {
 };
 
 export default ProductItem;
-// 36.35
