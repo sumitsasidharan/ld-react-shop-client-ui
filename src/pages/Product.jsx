@@ -7,7 +7,7 @@ import Announcement from '../components/Announcement';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import Newsletter from '../components/Newsletter';
-import { addProduct } from '../redux/cartRedux';
+import { addProduct } from '../redux/cartSlice';
 import { mobile } from '../responsive';
 import { publicRequest } from '../utils/requestMethods';
 
