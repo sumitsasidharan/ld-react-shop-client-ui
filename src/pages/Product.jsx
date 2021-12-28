@@ -1,11 +1,13 @@
 import { Add, Remove } from '@material-ui/icons';
 import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import Announcement from '../components/Announcement';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import Newsletter from '../components/Newsletter';
+import { addProduct } from '../redux/cartRedux';
 import { mobile } from '../responsive';
 import { publicRequest } from '../utils/requestMethods';
 
@@ -125,6 +127,7 @@ const Product = () => {
    const [quantity, setQuantity] = useState(1);
    const [color, setColor] = useState('');
    const [size, setSize] = useState('');
+   const dispatch = useDispatch();
 
    useEffect(() => {
       const getProduct = async () => {
@@ -149,6 +152,7 @@ const Product = () => {
 
    const handleClick = () => {
       // update cart
+      dispatch(addProduct({ ...product, quantity, color, size }));
    };
 
    return (
